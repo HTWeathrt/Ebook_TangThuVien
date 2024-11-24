@@ -40,21 +40,20 @@ namespace Ebook_TangThuVien
         private async void Start_Download(object sender, RoutedEventArgs e)
         {
            // LoadingProgressbar.Visibility = Visibility.Visible;
-            
             try
             {
+                request_HTTP.Flag_Cancel = false;
                 string URL_W = ULR_Web.Text;
                 string SaveType = Save_TYPE.Text;
                 int Chap_ST = Convert.ToInt32(ChapterStart.Text);
                 int Chap_EN = Convert.ToInt32(ChapterEND.Text);
                 if (!string.IsNullOrEmpty(URL_W) && !string.IsNullOrEmpty(SaveType))
                 {
-                    bool Open_ =  request_HTTP.Load_(URL_W,Chap_ST,Chap_EN,SaveType);
+                    bool Open_ =await  request_HTTP.Load_(URL_W,Chap_ST,Chap_EN,SaveType);
                     if (Open_)
                     {
                         Console.WriteLine("Connect -->>>   "+ URL_W);
                         await request_HTTP.Create_Conten();
-
                     }
                 }
                 else
@@ -106,6 +105,11 @@ namespace Ebook_TangThuVien
             {
 
             }
+        }
+
+        private void Flag_Cancel(object sender, RoutedEventArgs e)
+        {
+            request_HTTP.Flag_Cancel = true;
         }
     }
 }

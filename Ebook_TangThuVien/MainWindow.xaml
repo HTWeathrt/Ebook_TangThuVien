@@ -65,6 +65,7 @@
                                     <TextBox x:Name="ChapterStart" Background="Transparent" Width="100" Foreground="GhostWhite"  BorderBrush="Gray"
                                               HorizontalContentAlignment="Center"
                                                         VerticalContentAlignment="Center" PreviewTextInput="ChapterStart_PreviewTextInput"
+                                             Text="1"
                                              />
                                     <Label Content=" TO:"/>
                                     <TextBox x:Name="ChapterEND" Background="Transparent" Width="100" Foreground="GhostWhite" BorderBrush="Gray"
@@ -87,7 +88,7 @@
                                             </Style>
                                         </Button.Resources>
                                     </Button>
-                                    <Button Content="Cancel" Margin="5,0,0,0" Height="30" MinWidth="80" Click="CancelDownload">
+                                    <Button Content="Cancel" Margin="5,0,0,0" Height="30" MinWidth="80" Click="Flag_Cancel">
                                         <Button.Resources>
                                             <Style TargetType="Border">
                                                 <Setter Property="CornerRadius" Value="5"/>

@@ -26,7 +26,7 @@ namespace Ebook_TangThuVien.Ebook_Models
         {
 
         }
-        public bool Load_(string URL_WEB, int PAGESTART, int PAGEEND, string Save_TYPE)
+        public async Task<bool> Load_(string URL_WEB, int PAGESTART, int PAGEEND, string Save_TYPE)
         {
             //https://truyen.tangthuvien.vn/doc-truyen/cuu-vuc-pham-tien
             //https://truyen.tangthuvien.vn/doc-truyen/cuu-vuc-pham-tien/chuong-1
@@ -34,21 +34,24 @@ namespace Ebook_TangThuVien.Ebook_Models
             PAGE_ST = PAGESTART;
             PAGE_EN = PAGEEND;
             SaveType = Save_TYPE;
-            var task = Task.Run(() => Check_URL.Check_WEB(URL_WEB));
-            task.Wait();
-            return task.Result; 
+            var task = await Check_URL.Check_WEB(URL_WEB);;
+            return task; 
         }
         public async Task Create_Conten()
         {
             try
             {
                 Dictionary<int, string> FullDownload = new Dictionary<int, string>();
-                for (int i = PAGE_ST; i <= PAGE_EN; i++)
+                await Task.Run(() =>
                 {
-                    string URL_DOWNLOAD_ENT = $"{URL_WEB_DOWNLOAD}/{page_ter}{i}";
-                    Console.WriteLine(URL_DOWNLOAD_ENT);
-                    FullDownload.Add(i, URL_DOWNLOAD_ENT);
-                }
+                    for (int i = PAGE_ST; i <= PAGE_EN; i++)
+                    {
+                        string URL_DOWNLOAD_ENT = $"{URL_WEB_DOWNLOAD}/{page_ter}{i}";
+                        //
+                        FullDownload.Add(i, URL_DOWNLOAD_ENT);
+                    }
+
+                });
                 if (FullDownload.Count > 0)
                 {
                     Console.WriteLine($"Download total :{FullDownload.Count} Chappter ");
@@ -66,6 +69,7 @@ namespace Ebook_TangThuVien.Ebook_Models
         }
 
         private const string _RequestInerConten = "";
+        public bool Flag_Cancel = false;
         async Task LoadingPageFrame(Dictionary<int, string> fulload)
         {
             try
@@ -74,30 +78,36 @@ namespace Ebook_TangThuVien.Ebook_Models
                 HttpClient http_rquest = new HttpClient();
                 Save_Data save = new Save_Data();
                 var results = new ConcurrentBag<(int Index, string Result)>();
+
                 /*int Total = fulload.Count;
                 int Count = 0;*/
                 foreach (var item in fulload)
                 {
-                    await Task.Run(async () =>
+                    if (Flag_Cancel) break;
+                    var DataWeb = await CopyFullDatainCache(http_rquest, item.Value);
+                    if (DataWeb != null)
                     {
-                        var DataWeb = await CopyFullDatainCache(http_rquest, item.Value);
-                        if (DataWeb != null)
-                        {
-                            var data_cot = Get_dataconten(DataWeb);
-                            string Data = Result_Scan(data_cot);
-                            results.Add((item.Key, Data));
-                            Console.WriteLine("Complete :"+ item.Value);
-                        }
-                       /* Count++;
-                        double YRT_Rate = Math.Round((double)Count / Total * 100, 2);
-                       *//* CountModel.Progress_Value = (int)YRT_Rate;
-                        CountModel.Progressbar_ = $"Loading Progressing :{YRT_Rate}%";*/
+                        var data_cot = Get_dataconten(DataWeb);
+                        string Data = Result_Scan(data_cot);
+                        results.Add((item.Key, Data));
+                        Console.WriteLine("Complete :" + item.Value);
+                    }
+                    /* Count++;
+                     double YRT_Rate = Math.Round((double)Count / Total * 100, 2);
+                    *//* CountModel.Progress_Value = (int)YRT_Rate;
+                     CountModel.Progressbar_ = $"Loading Progressing :{YRT_Rate}%";*/
 
-
-                    });
                 }
-                var sortedResults = results.OrderBy(r => r.Index).ToList();
-               await save.SaveData(SaveType, sortedResults);
+                if (!Flag_Cancel)
+                {
+
+                    var sortedResults = results.OrderBy(r => r.Index).ToList();
+                    await save.SaveData(SaveType, sortedResults);
+                }
+                else
+                {
+                    Console.WriteLine("Cancel ");
+                }
             }
             catch
             {
