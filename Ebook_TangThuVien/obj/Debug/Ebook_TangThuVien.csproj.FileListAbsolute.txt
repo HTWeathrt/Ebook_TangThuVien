@@ -1,0 +1,17 @@
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\bin\Debug\Ebook_TangThuVien.exe.config
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\bin\Debug\Ebook_TangThuVien.exe
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\bin\Debug\Ebook_TangThuVien.pdb
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien.csproj.AssemblyReference.cache
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\MainWindow.g.cs
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\App.g.cs
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien_MarkupCompile.cache
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien_MarkupCompile.lref
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\MainWindow.baml
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien.g.resources
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien.Properties.Resources.resources
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien.csproj.GenerateResource.cache
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien.csproj.CoreCompileInputs.cache
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien.exe
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_TangThuVien.pdb
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\bin\Debug\epubsharp.dll
+C:\Users\ken\Desktop\Ebook_TangThuVien\Ebook_TangThuVien\obj\Debug\Ebook_Ta.C424A0A7.Up2Date
