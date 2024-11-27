@@ -133,5 +133,6 @@
   <ItemGroup>
     <Resource Include="document.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ebook_TangThuVien"
+        xmlns:bding ="clr-namespace:Ebook_TangThuVien.Ebook_Models"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" AllowsTransparency="True"
         Background="Transparent" 
         WindowStyle="None">
-
+    <Window.DataContext>
+        <bding:Loading_LB />
+    </Window.DataContext>
     <Border  CornerRadius="15" Background="DarkGray" BorderBrush="Gray"
         >
         <Grid>
@@ -49,7 +52,7 @@
                                        Foreground="GhostWhite"
                                        />
                                 <WrapPanel Margin="5,10,0,0">
-                                    <Label Content="Link URL WEB"/>
+                                    <Label Content="Link URL WEB"  Foreground="GhostWhite"/>
                                     <TextBox x:Name="ULR_Web" Background="Transparent" Width="400"
                                              Foreground="GhostWhite"  BorderBrush="Gray"
                                              HorizontalAlignment="Stretch"
@@ -60,20 +63,20 @@
                                              />
                                 </WrapPanel>
                                 <WrapPanel Margin="5,10,0,0">
-                                    <Label Content="Download Chappter"/>
-                                    <Label Content=" FROM:"/>
+                                    <Label Content="Download Chappter"  Foreground="GhostWhite"/>
+                                    <Label Content=" FROM:"  Foreground="GhostWhite"/>
                                     <TextBox x:Name="ChapterStart" Background="Transparent" Width="100" Foreground="GhostWhite"  BorderBrush="Gray"
                                               HorizontalContentAlignment="Center"
                                                         VerticalContentAlignment="Center" PreviewTextInput="ChapterStart_PreviewTextInput"
                                              Text="1"
                                              />
-                                    <Label Content=" TO:"/>
+                                    <Label Content=" TO:"  Foreground="GhostWhite"/>
                                     <TextBox x:Name="ChapterEND" Background="Transparent" Width="100" Foreground="GhostWhite" BorderBrush="Gray"
                                         HorizontalContentAlignment="Center"
                                         VerticalContentAlignment="Center" PreviewTextInput="ChapterStart_PreviewTextInput"/>
                                 </WrapPanel>
                                 <WrapPanel Margin="5,10,0,0" >
-                                    <Label Content=" Type Save File: "/>
+                                    <Label Content=" Type Save File: "  Foreground="GhostWhite"/>
                                     <ComboBox Width="120" HorizontalContentAlignment="Center" x:Name="Save_TYPE"
                                               VerticalContentAlignment="Center" SelectedItem="{Binding ElementName=comboBoxItem, Mode=OneWay}">
                                         <ComboBoxItem>epub</ComboBoxItem>
@@ -81,14 +84,14 @@
                                     </ComboBox>
                                 </WrapPanel>
                                 <WrapPanel  Margin="5,10,0,0">
-                                    <Button Content="Start Download " Margin="5,0,0,0" Height="30" MinWidth="100" Click="Start_Download">
+                                    <Button Content="Start Download " Margin="5,0,0,0" Height="30" MinWidth="100" Name="btdownload" Click="Start_Download">
                                         <Button.Resources>
                                             <Style TargetType="Border">
                                                 <Setter Property="CornerRadius" Value="5"/>
                                             </Style>
                                         </Button.Resources>
                                     </Button>
-                                    <Button Content="Cancel" Margin="5,0,0,0" Height="30" MinWidth="80" Click="Flag_Cancel">
+                                    <Button Content="Cancel" Name="btcancel" Margin="5,0,0,0" Height="30" MinWidth="80" Click="Flag_Cancel">
                                         <Button.Resources>
                                             <Style TargetType="Border">
                                                 <Setter Property="CornerRadius" Value="5"/>
@@ -122,7 +125,31 @@
                         </RichTextBox.Resources>
                     </RichTextBox>
                 </Grid>
+                
             </Grid>
+            <Grid Grid.Row="1" Name="ProgressbarShow" Visibility="Collapsed"
+                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                  Width="300" Height="100"
+                  >
+                <Border BorderBrush="Gray" BorderThickness="1"
+                        CornerRadius="10"
+                        Background="#FFDAB9"
+                        >
+                    <Grid>
+                        <StackPanel >
+                            <ProgressBar Height="25" Value="{Binding _Value}" Maximum="100" Minimum="0" Margin="5,20,5,0"
+                                         
+                                         />
+                            <Label Content="{Binding _Content}" Margin="5,5,5,0"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Center"
+                                   />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+            
         </Grid>
+   
     </Border>
 </Window>

@@ -30,18 +30,22 @@ namespace Ebook_TangThuVien
         public MainWindow()
         {
             InitializeComponent();
+            btcancel.IsEnabled = false;
             var writer = new RichTextBoxWriter(LOG_CONSOLE);
             Console.SetOut(writer);
             Console.WriteLine(" Tool Get data TangThuVien :......");
-            request_HTTP = new HTTP_Request();
+          
 
         }
         HTTP_Request request_HTTP;
         private async void Start_Download(object sender, RoutedEventArgs e)
         {
-           // LoadingProgressbar.Visibility = Visibility.Visible;
+            btdownload.IsEnabled = false;
+            btcancel.IsEnabled = true;
+            ProgressbarShow.Visibility = Visibility.Visible;
             try
             {
+                request_HTTP = new HTTP_Request();
                 request_HTTP.Flag_Cancel = false;
                 string URL_W = ULR_Web.Text;
                 string SaveType = Save_TYPE.Text;
@@ -65,7 +69,9 @@ namespace Ebook_TangThuVien
             {
                 MessageBox.Show("Error :" + ex);
             }
-           // LoadingProgressbar.Visibility = Visibility.Collapsed;
+            btcancel.IsEnabled = false;
+            btdownload.IsEnabled = true;
+            ProgressbarShow.Visibility = Visibility.Collapsed;
         }
         #region AppCOntrol
         private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -87,12 +93,10 @@ namespace Ebook_TangThuVien
         {
             e.Handled = !Regex.IsMatch(e.Text, "^[0-9]*$");
         }
-
         private void CancelDownload(object sender, RoutedEventArgs e)
         {
 
         }
-
         private void Openfilelocation(object sender, RoutedEventArgs e)
         {
             try
@@ -109,7 +113,10 @@ namespace Ebook_TangThuVien
 
         private void Flag_Cancel(object sender, RoutedEventArgs e)
         {
-            request_HTTP.Flag_Cancel = true;
+            if(request_HTTP != null)
+            {
+                request_HTTP.Flag_Cancel = true;
+            }
         }
     }
 }

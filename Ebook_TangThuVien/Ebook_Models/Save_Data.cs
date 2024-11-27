@@ -43,7 +43,10 @@ namespace Ebook_TangThuVien.Ebook_Models
                 {
                     string Date_R = DateTime.Now.ToString("yyyyMMdd_HHmmss");
                     string Path = $@"Export\{Date_R}_Docs.epub";
-
+                    if (!File.Exists(Path))
+                    {
+                        File.Create(Path);
+                    }
                     EpubWriter epu = new EpubWriter();
                     foreach (var item in data)
                     {

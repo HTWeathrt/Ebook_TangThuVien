@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 
@@ -21,19 +22,14 @@ namespace Ebook_TangThuVien.Ebook_Models.Log
         }
         public override void WriteLine(string value)
         {
-            _richTextBox.Dispatcher.Invoke(() =>
+            /*_richTextBox.Dispatcher.Invoke(() =>
             {
-                _richTextBox.AppendText($"{Call_Clock()} :{value}\n"); // Thêm chuỗi + dòng mới
-                EnsureMaxLength();
-                _richTextBox.ScrollToEnd();
-            });
+               *//* EnsureMaxLength();
+                _richTextBox.ScrollToEnd();*//*
+            });*/
+            TrimLog(_richTextBox, value);
         }
-        string Call_Clock()
-        {
-            string Timer = DateTime.Now.ToString("[yyyyMMdd_HH:mm:sss]");
-            return Timer;
-        }
-        private void EnsureMaxLength()
+/*        private void EnsureMaxLength()
         {
             if (_richTextBox.Document.ContentStart.GetOffsetToPosition(_richTextBox.Document.ContentEnd) > _maxLength)
             {
@@ -45,7 +41,37 @@ namespace Ebook_TangThuVien.Ebook_Models.Log
                     _richTextBox.AppendText(currentText.Substring(currentText.Length - _maxLength));
                 }
             }
+
+        }*/
+        private const int MaxLogLength = 100000;
+        private void TrimLog(RichTextBox richTextBox, string value)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                // Get the total length of the RichTextBox content
+                TextRange fullTextRange = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+                int totalLength = fullTextRange.Text.Length;
+
+                if (totalLength > MaxLogLength)
+                {
+                    // Trim the text efficiently
+                    TextPointer startPointer = richTextBox.Document.ContentStart.GetPositionAtOffset(totalLength - MaxLogLength);
+                    if (startPointer != null)
+                    {
+                        TextRange trimRange = new TextRange(richTextBox.Document.ContentStart, startPointer);
+                        trimRange.Text = string.Empty;
+                    }
+                }
+
+                // Append new log entry
+                string logEntry = $"{DateTime.Now:yyyyMMdd_HH:mm:sss}: {value}\n";
+                richTextBox.AppendText(logEntry);
+
+                // Scroll to the end
+                richTextBox.ScrollToEnd();
+            });
         }
+
         public override Encoding Encoding => Encoding.UTF8;
     }
 

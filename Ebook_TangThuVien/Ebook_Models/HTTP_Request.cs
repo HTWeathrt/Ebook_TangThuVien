@@ -47,7 +47,6 @@ namespace Ebook_TangThuVien.Ebook_Models
                     for (int i = PAGE_ST; i <= PAGE_EN; i++)
                     {
                         string URL_DOWNLOAD_ENT = $"{URL_WEB_DOWNLOAD}/{page_ter}{i}";
-                        //
                         FullDownload.Add(i, URL_DOWNLOAD_ENT);
                     }
 
@@ -79,23 +78,32 @@ namespace Ebook_TangThuVien.Ebook_Models
                 Save_Data save = new Save_Data();
                 var results = new ConcurrentBag<(int Index, string Result)>();
 
-                /*int Total = fulload.Count;
-                int Count = 0;*/
+                int Total = fulload.Count;
+                int Count = 0;
                 foreach (var item in fulload)
                 {
                     if (Flag_Cancel) break;
-                    var DataWeb = await CopyFullDatainCache(http_rquest, item.Value);
-                    if (DataWeb != null)
+                    try
                     {
-                        var data_cot = Get_dataconten(DataWeb);
-                        string Data = Result_Scan(data_cot);
-                        results.Add((item.Key, Data));
-                        Console.WriteLine("Complete :" + item.Value);
+                        var DataWeb = await CopyFullDatainCache(http_rquest, item.Value);
+                        if (DataWeb != null)
+                        {
+                            var data_cot = Get_dataconten(DataWeb);
+                            string Data = Result_Scan(data_cot);
+                            results.Add((item.Key, Data));
+                            Console.WriteLine("Complete :" + item.Value);
+                        }
+                        
                     }
-                    /* Count++;
-                     double YRT_Rate = Math.Round((double)Count / Total * 100, 2);
-                    *//* CountModel.Progress_Value = (int)YRT_Rate;
-                     CountModel.Progressbar_ = $"Loading Progressing :{YRT_Rate}%";*/
+                    catch
+                    {
+                        Console.WriteLine("Error Chapter :"+ item.Key);
+                    }
+                    Count++;
+                    double YRT_Rate = Math.Round((double)Count / Total * 100, 2);
+                    Loading_LB._Value = (int)YRT_Rate;
+                    Loading_LB._Content = $"Loading Progressing : {YRT_Rate}%";
+
 
                 }
                 if (!Flag_Cancel)

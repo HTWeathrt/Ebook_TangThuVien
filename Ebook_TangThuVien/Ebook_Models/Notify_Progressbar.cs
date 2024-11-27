@@ -7,35 +7,52 @@ using System.Threading.Tasks;
 
 namespace Ebook_TangThuVien.Ebook_Models
 {
-  /*  public static class CountModel
+    internal class Loading_LB : INotifyPropertyChanged
     {
-        private static string _progress_bar;
-        public static string Progressbar_
+        private static string _content;
+
+        public static string _Content
         {
-            get { return _progress_bar; }
+            get
+            {
+                return _content;
+            }
             set
             {
-                _progress_bar = value;
-                OnStaticPropertyChanged(nameof(Progressbar_));
+                _content = value;
+                OnStaticPropertyChanged(nameof(_Content));
+            }
+        }
+        //_Value
+        private static int _value;
+        public static int _Value
+        {
+            get => _value;
+            set
+            {
+                if (_value != value)
+                {
+                    _value = value;
+                    OnStaticPropertyChanged(nameof(_Value));
+                }
             }
         }
 
-        private static int _progress_value;
-        public static int Progress_Value
-        {
-            get { return _progress_value; }
-            set
-            {
-                _progress_value = value;
-                OnStaticPropertyChanged(nameof(Progress_Value));
-            }
-        }
-        public static event EventHandler<PropertyChangedEventArgs> StaticPropertyChanged;
+
+        public static event PropertyChangedEventHandler StaticPropertyChanged;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private static void OnStaticPropertyChanged(string propertyName)
         {
             StaticPropertyChanged?.Invoke(null, new PropertyChangedEventArgs(propertyName));
         }
-    }*/
+
+        // Notify instance property changes
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
 
 }

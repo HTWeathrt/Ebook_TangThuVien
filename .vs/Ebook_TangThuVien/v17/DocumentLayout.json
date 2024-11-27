@@ -1,0 +1,124 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|c:\\users\\ken\\desktop\\ebook_tangthuvien_v\\ebook_tangthuvien\\ebook_models\\save_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|solutionrelative:ebook_tangthuvien\\ebook_models\\save_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\ebook_tangthuvien\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|solutionrelative:ebook_tangthuvien\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\ebook_tangthuvien\\ebook_models\\http_request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|solutionrelative:ebook_tangthuvien\\ebook_models\\http_request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\ebook_tangthuvien\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|solutionrelative:ebook_tangthuvien\\mainwindow.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\ebook_tangthuvien\\ebook_models\\notify_progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|solutionrelative:ebook_tangthuvien\\ebook_models\\notify_progressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\ebook_tangthuvien\\ebook_models\\log\\text_writer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BAFD549-B0D0-41EE-96AD-6A2697C5DDB0}|Ebook_TangThuVien\\Ebook_TangThuVien.csproj|solutionrelative:ebook_tangthuvien\\ebook_models\\log\\text_writer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Notify_Progressbar.cs",
+              "DocumentMoniker": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\Notify_Progressbar.cs",
+              "RelativeDocumentMoniker": "Ebook_TangThuVien\\Ebook_Models\\Notify_Progressbar.cs",
+              "ToolTip": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\Notify_Progressbar.cs",
+              "RelativeToolTip": "Ebook_TangThuVien\\Ebook_Models\\Notify_Progressbar.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:28:19.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Save_Data.cs",
+              "DocumentMoniker": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\Save_Data.cs",
+              "RelativeDocumentMoniker": "Ebook_TangThuVien\\Ebook_Models\\Save_Data.cs",
+              "ToolTip": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\Save_Data.cs",
+              "RelativeToolTip": "Ebook_TangThuVien\\Ebook_Models\\Save_Data.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAwD8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:22:30.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HTTP_Request.cs",
+              "DocumentMoniker": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\HTTP_Request.cs",
+              "RelativeDocumentMoniker": "Ebook_TangThuVien\\Ebook_Models\\HTTP_Request.cs",
+              "ToolTip": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\HTTP_Request.cs",
+              "RelativeToolTip": "Ebook_TangThuVien\\Ebook_Models\\HTTP_Request.cs",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAmwGgAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:12:47.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Text_Writer.cs",
+              "DocumentMoniker": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\Log\\Text_Writer.cs",
+              "RelativeDocumentMoniker": "Ebook_TangThuVien\\Ebook_Models\\Log\\Text_Writer.cs",
+              "ToolTip": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\Ebook_Models\\Log\\Text_Writer.cs",
+              "RelativeToolTip": "Ebook_TangThuVien\\Ebook_Models\\Log\\Text_Writer.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwC8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:14:35.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Ebook_TangThuVien\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Ebook_TangThuVien\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAAwEkAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T15:10:57.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Ebook_TangThuVien\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ken\\Desktop\\Ebook_TangThuVien_V\\Ebook_TangThuVien\\MainWindow.xaml",
+              "RelativeToolTip": "Ebook_TangThuVien\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-27T15:10:50.761Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
